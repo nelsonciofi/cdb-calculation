@@ -1,0 +1,34 @@
+<h1 id="tableLabel">Simulador de Cálculo do CDB</h1>
+
+<p>Preencha os campos abaixo para fazer a simulação dos seus rendimentos ao investir no CDB.</p>
+
+<form class="input-form" (ngSubmit)="submitForm()">
+    <div class="form-group">
+        <label for="initialValue">Investimento:</label>
+        <input class="form-control" type="number" id="initialValue" name="initialValue" [(ngModel)]="investment.initialValue" required [min]="0" (input)="onInitialValueInput($event)">
+    </div>
+
+    <div class="form-group">
+        <label for="redeemTermMonths">Prazo para resgate (em meses):</label>
+        <input class="form-control" type="number" id="redeemTermMonths" name="redeemTermMonths" [(ngModel)]="investment.redeemTermMonths" required [min]="0" (input)="onRedeemTermMonthsInput($event)">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    
+</form>
+
+<div *ngIf="carregando">
+    <p>Calculando informações na nuvem.</p>
+</div>
+
+<div *ngIf="errorMessage">
+    <p>{{errorMessage}}</p>
+</div>
+
+<div *ngIf="income">
+    <h3>Rendimento do CDB Simulado</h3>
+    <p>Valor bruto: {{ income.gross | currency: 'BRL' }}</p>
+    <p>Valor líquido: {{ income.net | currency: 'BRL'}}</p>
+</div>
+
+
