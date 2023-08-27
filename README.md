@@ -74,7 +74,7 @@ ng test
 
 ## Optional
 
-Optionally, you can run the [RunitBabe](runItBate.bat) and it will run the frontend and backend and then navigate to http://localhost:4200 on your web browser.
+Optionally, you can run the [RunitBabe](runItBabe.bat) and it will run the frontend and backend and then navigate to http://localhost:4200 on your web browser.
 
 ## License
 
