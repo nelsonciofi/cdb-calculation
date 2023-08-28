@@ -1,7 +1,7 @@
 
 # CDB Calculation
 
-This application allows users to simulate CDB investments and find out the gross and net income after a given periodo of months.
+This application allows users to simulate CDB investments and find out the gross and net income after a given period of months.
 
 ## Prerequisites
 - .NET Core SDK 7.0
@@ -42,6 +42,14 @@ We use xUnit for unit testing. Follow these steps to run the unit tests.
 1. dotnet test
 ```
 
+If you are looking for code coverage, run the following command:
+
+```
+dotnet test --collect:"XPlat Code Coverage"
+```
+A coverage.cobertura.xml file will be created in B3.Tests project with lots of statitics about code coverage.
+
+
 ## Frontend
 
 ### Usage
@@ -74,7 +82,8 @@ ng test
 
 ## Optional
 
-Optionally, you can run the [RunitBabe](runItBabe.bat) and it will run the frontend and backend and then navigate to http://localhost:4200 on your web browser.
+Optionally, you can run the [RunitBabe](runItBabe.bat) and it will run the frontend and backend.   
+Then navigate to http://localhost:4200 on your web browser.
 
 ## License
 
