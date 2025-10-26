@@ -4,8 +4,8 @@ public static class MathF
 {
     public static decimal WithCompoundInterest(this decimal value, decimal tax, int term)
     {
-        if (tax < 0) throw new ArgumentOutOfRangeException(nameof(tax));
-        if (term <= 0) throw new ArgumentOutOfRangeException(nameof(term));
+        if (tax < 0) return 0;
+        if (term <= 0) return 0;
 
         return value * ((1 + tax).Pow(term));
     }

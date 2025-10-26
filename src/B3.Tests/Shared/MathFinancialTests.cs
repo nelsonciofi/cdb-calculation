@@ -46,23 +46,39 @@ public class MathFinancialTests
     }
 
     [Fact]
-    public void WithCompoundInterest_NegativeTax_ThrowsException()
+    public void WithCompoundInterest_NegativeTax_ReturnsZero()
     {        
         var initialValue = 1500m;
         var negativeTax = -0.1m;
         var term = 24;
         
-        Assert.Throws<ArgumentOutOfRangeException>(() => initialValue.WithCompoundInterest(negativeTax, term));
+        var result = initialValue.WithCompoundInterest(negativeTax, term);
+        
+        Assert.Equal(0, result);
     }
 
     [Fact]
-    public void WithCompoundInterest_NegativeTerm_ThrowsException()
+    public void WithCompoundInterest_NegativeTerm_ReturnsZero()
     {        
         var initialValue = 1000m;
         var tax = 0.06m;
         var negativeTerm = -3;
-                
-        Assert.Throws<ArgumentOutOfRangeException>(() => initialValue.WithCompoundInterest(tax, negativeTerm));
+        
+        var result = initialValue.WithCompoundInterest(tax, negativeTerm);
+        
+        Assert.Equal(0, result);
+    }
+
+    [Fact]
+    public void WithCompoundInterest_ZeroTerm_ReturnsZero()
+    {        
+        var initialValue = 1000m;
+        var tax = 0.06m;
+        var zeroTerm = 0;
+        
+        var result = initialValue.WithCompoundInterest(tax, zeroTerm);
+        
+        Assert.Equal(0, result);
     }
 
     [Theory]
