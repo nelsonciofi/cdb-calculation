@@ -18,7 +18,7 @@ public class CdbCalculationController : ControllerBase
 
     [HttpPost]
     public async Task<IActionResult> CalculateCdb(CdbCalculationRequest request)
-    {
+    {        
         var res = await mediator.Send(request);
         
         return res.Match<IActionResult>(income => Ok(income),

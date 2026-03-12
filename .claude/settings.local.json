@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dotnet --list-sdks)",
+      "Bash(dotnet restore:*)",
+      "Bash(dotnet build:*)",
+      "Bash(rm -f package-lock.json)",
+      "Bash(rm -rf node_modules)",
+      "Bash(npm install:*)",
+      "Bash(npm audit:*)",
+      "Bash(dotnet test:*)",
+      "Bash(npx ng:*)"
+    ]
+  }
+}

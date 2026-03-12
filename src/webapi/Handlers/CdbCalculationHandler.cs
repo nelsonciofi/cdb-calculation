@@ -18,7 +18,6 @@ public sealed class CdbCalculationHandler : IRequestHandler<CdbCalculationReques
     public Task<Result<CdbIncome, ValidationResult>> Handle(CdbCalculationRequest request,
                                                             CancellationToken cancellationToken)
     {
-
         var res = cdbCalculator.CalculateCdb(request.Investment);
         return Task.FromResult(res);
     }

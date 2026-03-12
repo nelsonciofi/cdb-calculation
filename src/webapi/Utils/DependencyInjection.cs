@@ -16,6 +16,7 @@ public static class DependencyInjection
         services.Configure<CdbTaxOptions>(configuration.GetSection("CdbTaxOptions"))
                 .Configure<CdbTaxRatesPerMonths>(configuration.GetSection("CdbTaxRatesPerMonths"))
                 .AddSingleton<ICdbCalculator, CdbCalculator>()
+                .AddSingleton<ICdbCalculatorV2, CdbCalculatorV2>()
                 .AddSingleton<ICdbInvestmentValidator, CdbInvestmentValidator>();
     }
 
