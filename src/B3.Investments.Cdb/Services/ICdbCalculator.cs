@@ -7,3 +7,9 @@ public interface ICdbCalculator
 {
     Result<CdbIncome, ValidationResult> CalculateCdb(CdbInvestment? investment);
 }
+
+
+public interface ICdbCalculatorV2
+{
+    Result<CdbIncome, ValidationResult> CalculateCdb(CdbInvestment? investment);
+}
