@@ -9,7 +9,9 @@
       "Bash(npm install:*)",
       "Bash(npm audit:*)",
       "Bash(dotnet test:*)",
-      "Bash(npx ng:*)"
+      "Bash(npx ng:*)",
+      "Bash(npm ls:*)",
+      "Bash(npm view:*)"
     ]
   }
 }
